@@ -1,0 +1,175 @@
+.header{
+  height: 4.5rem;
+  border-bottom: 1px solid var(--borda);
+  position: fixed;
+  background: var(--bg);
+  width: 100%;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+  z-index: 10;
+}
+.container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.container>*{
+    flex: 1;
+}
+.logo{
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: -3px;
+    margin-right: .3rem;
+    fill: var(--texto-1)
+}
+.header nav a{
+    padding: .5rem;
+    border: 1px solid transparent;
+}
+.header nav a:hover {
+    color: var(--sec)
+}
+.header nav a+a {
+    margin-left: .8rem;
+}
+.header .linkAtivo {
+  border-bottom: 2px solid var(--sec)
+}
+
+.btnCarrinho{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+.btnCarrinho:disabled{
+    background: rgb(138, 138, 133);
+    cursor: not-allowed;
+}
+
+.btnCarrinho:disabled:hover {
+    border-color: transparent;
+    color: var(--bg)
+}
+.btnCarrinho.btnAtivo {
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--sec);
+    background: var(--sec);
+    color: var(--texto-1);
+    border: 2px solid var(--texto-1)
+
+}
+
+.btnCarrinho svg{
+    width: 20px;
+    height: 20px;
+    margin-left: .5rem;
+    margin-top: -3px;
+}
+.itensCarrinho{
+    background: var(--sec);
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--texto-1);
+    font-weight: bold;
+    border: 2px solid var(--texto-1);
+    top: -12px;
+    right: -10px;
+}
+
+.menuBtn {
+    display: none;
+  }
+  
+  @media (max-width: 550px) {
+    .menuBtn {
+      display: block;
+      min-width: calc(40px - 4px);
+      min-height: calc(40px - 4px);
+      margin-left: auto;
+      margin-right: 1rem;
+      border-radius: .2rem;
+      transition: .2s;
+    }
+  
+    .menuBtn.shown {
+      box-shadow: 0 0 0 2px var(--texto-1);
+  
+    }
+  
+    .menuBtn svg {
+      width: 30px;
+      height: 30px;
+      margin-top: 3px;
+    }
+  
+    .container {
+      justify-content: space-between;
+    }
+  
+    .container>* {
+      flex: 0
+    }
+  
+    .header nav {
+      position: absolute;
+      background: var(--bg);
+      flex-direction: column;
+      text-align: center;
+      padding: 1rem;
+      border: 1px solid var(--borda);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.06);
+      top: 4.5rem;
+      right: 55px;
+      border-radius: .2rem;
+      display: flex;
+      visibility: hidden;
+      transition: .3s;
+      transform: translate3d(1rem, 0, 0);
+      opacity: 0;
+    }
+  
+    .header nav.shown {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+      transform: translate3d(0, 0, 0);
+    }
+  
+    .header nav a+a {
+      margin-left: 0;
+    }
+  
+    .header .linkAtivo {
+      border-bottom: none;
+      color: var(--sec)
+    }
+  
+    .btnCarrinho span:nth-of-type(1) {
+      display: none;
+    }
+  
+    .btnCarrinho {
+      width: 40px;
+      height: 40px;
+      padding: .5rem
+    }
+  
+    .btnCarrinho svg {
+      margin-left: 0;
+      width: 25px;
+      height: 25px;
+    }
+  }
