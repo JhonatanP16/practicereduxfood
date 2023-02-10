@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Alert from "./components/Alert"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from './routes/Home'
@@ -8,6 +9,7 @@ function App() {
 
   return (
     <BrowserRouter >
+      <Alert/>
       <Header/>
       <main className="container">
       <Routes>

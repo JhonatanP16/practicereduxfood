@@ -10,7 +10,7 @@ const alertSlice = createSlice({
             state.type= action.payload.type;
         },
         hideAlert(state){
-            state.alerIsShow = false;
+            state.alertIsShow = false;
         }
     }
 });
