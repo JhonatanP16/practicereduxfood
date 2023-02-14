@@ -9,7 +9,7 @@ const Alert = () => {
     classStatus = classes.ok;
   }
   if(alert.type === 'bad'){
-    classStatus === classes.bad
+    classStatus = classes.bad;
   }
   const styles = `${alertIsShow ? classes.alertShown : ''} ${classStatus} ${classes.alerta}`
   return (
